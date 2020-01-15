@@ -1,0 +1,19 @@
+
+
+!Descargamos miniconda
+
+sh ./Miniconda ===========================>Instalar miniconda /Descargas?
+source .bashrc ==========================> Establece el branch miniconda como principal python
+ 
+conda create -n <nameEntorno> python=3.7 => Crea entorno virtual con version python especifica
+source activate <nameEntorno> ============> Activamos y accedemos al entorno virtual
+source deactivate ========================> Apaga el entorno virtual
+
+pip install django==<version> ====================> Instala Django con la herramiento pip
+django-admin startproject <nameProyecto> => Creamos Proyecto Django
+
+pip list   ===============================> Lista las APIs instaladas
+which python  ============================> Ubicacion de python utilizado del entorno
+
+
+

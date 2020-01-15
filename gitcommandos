@@ -1,0 +1,26 @@
+Integración con GitHub
+
+Conectarse al repositorio
+> git remote add origin https://github.com/dznkos/WebConsultoria.git
+
+Actualizar código desde PC al repositorio
+> git push -u origin master
+
+Actualizar código desde el repositorio a la PC
+> git pull origin master
+
+Clonar o copiar código
+> git clone origin master
+
+Ver actuales remotes 
+> git remote -v
+
+Remover remotes por name
+> git remote rm <name>
+
+Crear snapshoot del proyecto
+> git commit -m "Version inicial"
+
+ver snapshoot
+> git log
+

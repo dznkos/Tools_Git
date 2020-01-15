@@ -1,0 +1,44 @@
+Anaconda:
+Anaconda es una distribución de software que viene con más de 150 paquetes cientificos, entre ellos Conda y Python. Conda es una administrador de paquetes y entornos. existe Miniconda, una versión más ligera.
+PIP: Es una administrador de paquetes para librerias de python.
+*Conda es similar a pip con la diferencia que esta destinado para hacer data science y pip para uso general.
+
+
+Comprobar Anaconda Actualizado:
+> conda update conda
+
+Consultar todos los envs:
+> conda info --envs
+
+Crear Entorno virtual:
+> conda create -n <nameentorno> python=<ver>
+
+Activar/Entrar entorno virtual
+> source activate <nameentorno> 
+
+Instalar Django:(ejecutar en entorno):
+(env)> pip install django
+
+Migrar configuracion inicial BD(admin, auth, contenttypes, sessions)
+> python manage.py migrate
+
+Crear app:
+> python manage.py startapp <name>
+
+Arrancar servidor web:
+> python manage.py runserver
+
+::Comandos Conda::
+Consultar todos los envs:
+> conda info --envs
+Comprobar versiones Python del Sistema
+> conda search '^python$'
+Comprobar las versiones de las librerías instaladas:
+> conda list -e
+
+En líneas generales Anaconda Distribution es una distribucción de Python que funciona como un gestor de entorno, un gestor de paquetes y que posee una colección de más de 720 paquetes de código abierto.
+
+
+
+
+

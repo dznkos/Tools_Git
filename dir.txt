@@ -1,0 +1,90 @@
+Entrar al entorno Virtual del proyecto:
+manage.py > File terminal < entorno virtual
+
+Package Manipular imagenes:
+pip install Pillow
+
+Definir la estructura del proyecto
+
+*'Sistema de Mapeado'
+modelo objeto relacional (ORM) / Object Relational Model
+para trabajar con objetos mapeados en la base de datos
+
+*Clases que manejan los
+Objetos Persistentes son llamados Modelos(Models)
+
+Crear App nueva llamada "portfolio":
+python manage.py startapp porfolio
+
+Crear modelos ir:
+portfolio > models.py
+
+Creamos la clase:
+class Project(models.Model):
+	title= models.CharField(max_length=200)
+	description = models.TextField()
+	image = models.ImageField()
+	created = models.DateTimeField(auto_now_add=True)// ejec 1vz
+	updated = models.DateTimeField(auto_now=True)// unlimited
+
+Agregar app App('Portfolio') al proyecto:
+> settings.py > INSTALLED_APPS:
+'portfolio',
+
+Migracion de App:
+  *Migrar la app'portfolio' y crea modelo Project
+   python manage.py makemigrations portfolio
+
+  *Aplicar migracion a la Base de Datos:
+    python manage.py migrate portfolio
+
+
+Crear un usuario Administrador SuperUsuario django:
+python manage.py createsuperuser
+us:sunset
+ps:sunset2006
+
+Panel Administrador Django Ingresar
+
+Registrar el modelo portfolio al proyecto:
+> portfolio > admin.py:
+from .models import Project
+admin.site.register(Project)
+
+Modelo registrado!
+Revisar Panel Administracion Django
+
+
+-Agregar Nombre Publico de app:
+  >portfolio>apps.py:
+  verbose_name = 'Portafolio'
+
+  Utilize verbose_name:
+  > settings.py > INSTALLED_APPS:
+  'portfolio.apps.PortfolioConfig',
+
+
+-Cambiar nombre del Modelo('Project'):
+ >portfolio>models.py:
+    class Meta:
+      verbose_name = "proyecto"
+      verbose_name_plural = "proyectos"
+      ordering = ["-created"]
+  
+  #devuelve el nombre del proyecto
+    def __str__(self):
+	return self.title
+
+- Crear directorio para Imagenes de DB
+>webpersonal>media:
+ #Media Files
+ MEDIA_URL = '/media/'
+ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+- Acceder a las Imagenes
+>webpersonal>urls.py:
+ if settings.DEBUG:
+ from django.conf.urls.static import static urlpatterns += static       	(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+
+
